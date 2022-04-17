@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import Toggle from './components/Toggle';
 import Tab from './components/Tab';
 import Slider from './components/Slider';
+import Input from './components/Input';
 
 const Container = styled.div({
   width: '50%',
@@ -28,6 +29,11 @@ function App() {
       <div className="Slider.js">
         <div>3. slider</div>
         <Slider />
+      </div>
+
+      <div className="Input.js">
+        <div>4. Input</div>
+        <Input />
       </div>
     </Container>
   );

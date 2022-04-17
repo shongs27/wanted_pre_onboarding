@@ -13,3 +13,5 @@ gitignore 수정
 2. Tab.js
 
 3. Slider.js
+
+- [ ] range input 스타일 간격 조정
