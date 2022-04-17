@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 
 import Toggle from './components/Toggle';
 import Tab from './components/Tab';
+import Slider from './components/Slider';
 
 const Container = styled.div({
   width: '50%',
@@ -14,7 +15,7 @@ const Container = styled.div({
 function App() {
   return (
     <Container>
-      <div className="toggle.js">
+      <div className="Toggle.js">
         <div>1. toggle</div>
         <Toggle />
       </div>
@@ -22,6 +23,11 @@ function App() {
       <div className="Tab.js">
         <div>2. tab</div>
         <Tab />
+      </div>
+
+      <div className="Slider.js">
+        <div>3. slider</div>
+        <Slider />
       </div>
     </Container>
   );
