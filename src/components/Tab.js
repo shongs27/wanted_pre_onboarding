@@ -13,6 +13,8 @@ const List = styled.ul({
 const Item = styled.li(({ clicked }) => ({
   '& button': {
     backgroundColor: 'inherit',
+    fontWeight: 'bold',
+
     width: '200px',
     padding: '1em 4em',
     border: 'none',
