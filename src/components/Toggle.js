@@ -3,11 +3,11 @@ import { useState } from 'react';
 import styled from '@emotion/styled';
 
 const Container = styled.div({
+  width: '300px',
   margin: '1em auto',
 
   display: 'flex',
 
-  width: '300px',
   backgroundColor: '#efefef',
 
   border: '1px solid #eee',
