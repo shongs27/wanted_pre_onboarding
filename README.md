@@ -8,6 +8,7 @@ gitignore 수정
 - true일 경우 toggle값은 true가 되어 '기본'이 선택되어지고
 - false일 경우 toggle값은 false가 되어'상세'가 선택되어집니다.
 
+- [ ] 슬라이드 색깔 변하는거 커스터마이징
 - [ ] 슬라이드 애니메이션 추가하기
 
 2. Tab.js

@@ -18,7 +18,7 @@ export default function Input() {
   }
 
   return (
-    <div>
+    <div style={{ margin: '1em' }}>
       <div>
         <label htmlFor="input-email">E-mail</label>
         <input

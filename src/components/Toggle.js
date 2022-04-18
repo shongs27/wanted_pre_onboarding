@@ -16,7 +16,6 @@ const Container = styled.div({
 
 const Button = styled.button(({ toggle }) => ({
   backgroundColor: toggle ? 'white' : 'inherit',
-  border: 'none',
   padding: '1em',
   width: '150px',
   fontWeight: 'bold',
@@ -38,6 +37,7 @@ export default function Toggle() {
   function handleDetail() {
     setToggle(false);
   }
+
   return (
     <Container>
       <Button toggle={toggle} onClick={handleBasic}>

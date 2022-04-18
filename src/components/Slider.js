@@ -91,6 +91,7 @@ export default function Slider() {
   function handleClick(targetNumber) {
     setValue(targetNumber);
   }
+  
   return (
     <Container>
       <div
