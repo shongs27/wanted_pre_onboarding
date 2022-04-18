@@ -82,10 +82,7 @@ export default function Dropzone() {
   const [selected, setSelected] = useState('All Position');
 
   function handleClick() {
-    setToggle((prev) => {
-      console.log(!prev);
-      return !prev;
-    });
+    setToggle((prev) => !prev);
   }
 
   function handleOption(e) {

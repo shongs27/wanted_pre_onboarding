@@ -7,14 +7,13 @@ const Container = styled.div({
   margin: '1em 10em',
 });
 
-const InputSlider = styled.input({
+const InputSlider = styled.input(({ value }) => ({
   width: '400px',
   WebkitAppearance: 'none',
   margin: 0,
 
   '&::-webkit-slider-runnable-track': {
-    background:
-      'linear-gradient(to right, #82CFD0 0%, #82CFD0 50%, #fff 50%, #fff 100%)',
+    background: `linear-gradient(to right, #82CFD0 0%, #82CFD0 ${value}%, #fff 0)`,
     border: 'solid 1px #82CFD0',
     borderRadius: '30px',
   },
@@ -30,7 +29,7 @@ const InputSlider = styled.input({
     // transition: 'background .15s ease-in-out',
     boxShadow: '0 0 0 3px white, 0 0 0 6px #1abc9c',
   },
-});
+}));
 
 const Datalist = styled.datalist({
   width: '400px',
@@ -91,7 +90,7 @@ export default function Slider() {
   function handleClick(targetNumber) {
     setValue(targetNumber);
   }
-  
+
   return (
     <Container>
       <div
