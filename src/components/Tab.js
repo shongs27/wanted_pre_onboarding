@@ -1,5 +1,20 @@
+import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useState } from 'react';
+
+const slideIn = keyframes`
+  from { 
+    opacity:0;
+    border-bottom: 2px solid #00cec9;
+    left: -1000
+  }
+
+  to {
+    opacity: 1;
+    border-bottom: 2px solid #efefef;
+    left: 0;
+  }
+`;
 
 const List = styled.ul({
   width: '600px',
@@ -18,7 +33,9 @@ const Item = styled.li(({ clicked }) => ({
     width: '200px',
     padding: '1em 4em',
     border: 'none',
-    borderBottom: clicked ? '2px solid #00cec9' : '2px solid #efefef',
+    // borderBottom: clicked ? '2px solid #00cec9' : '2px solid #efefef',
+
+    animation: clicked && `${slideIn} 1s cubic-bezier(0.25, 0.1, 0.25, 1)`,
 
     '&:hover': {
       cursor: 'pointer',

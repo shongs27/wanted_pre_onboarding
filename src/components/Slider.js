@@ -132,31 +132,13 @@ export default function Slider() {
           onChange={handleChange}
         />
         <List>
-          <Item>
-            <button type="button" onClick={() => handleClick(first)}>
-              {first}%
-            </button>
-          </Item>
-          <Item>
-            <button type="button" onClick={() => handleClick(second)}>
-              {second}%
-            </button>
-          </Item>
-          <Item>
-            <button type="button" onClick={() => handleClick(third)}>
-              {third}%
-            </button>
-          </Item>
-          <Item>
-            <button type="button" onClick={() => handleClick(forth)}>
-              {forth}%
-            </button>
-          </Item>
-          <Item>
-            <button type="button" onClick={() => handleClick(fifth)}>
-              {fifth}%
-            </button>
-          </Item>
+          {[first, second, third, forth, fifth].map((step) => (
+            <Item>
+              <button type="button" onClick={() => handleClick(step)}>
+                {step}%
+              </button>
+            </Item>
+          ))}
         </List>
       </div>
     </Container>
