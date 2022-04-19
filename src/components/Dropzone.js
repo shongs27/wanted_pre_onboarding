@@ -153,7 +153,7 @@ export default function Dropzone() {
       <OptionsContainer toggle={toggle}>
         {options.map(({ abbr, name, show }, index) => (
           <Option key={index} onClick={handleOption} show={show}>
-            <input type="radio" id={abbr} />
+            <input type="radio" id={abbr} name="category" />
             <label htmlFor={abbr}>{name}</label>
           </Option>
         ))}

@@ -133,7 +133,7 @@ export default function Slider() {
         />
         <List>
           {[first, second, third, forth, fifth].map((step) => (
-            <Item>
+            <Item key={step}>
               <button type="button" onClick={() => handleClick(step)}>
                 {step}%
               </button>
