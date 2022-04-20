@@ -13,6 +13,10 @@ const Container = styled.div({
   padding: '0 1.4em',
   border: '1px solid black',
   fontSize: '20px',
+
+  '& > div': {
+    marginBottom: '50px',
+  },
 });
 
 function App() {

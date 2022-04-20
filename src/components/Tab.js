@@ -16,8 +16,11 @@ const List = styled.ul(({ clicked }) => ({
   '&::after': {
     content: "''",
     position: 'absolute',
-    left: clicked === '감자' ? 0 : clicked === '고구마' ? '200px' : '400px',
     bottom: '-2px',
+
+    left: clicked === '감자' ? 0 : clicked === '고구마' ? '200px' : '400px',
+
+    display: 'block',
     width: '200px',
     height: '2px',
     backgroundColor: '#00cec9',
@@ -29,8 +32,8 @@ const List = styled.ul(({ clicked }) => ({
 const Item = styled.li(({ clicked }) => ({
   '& button': {
     backgroundColor: 'inherit',
-    fontWeight: clicked ? '900' : 'bold',
 
+    fontWeight: clicked ? '900' : 'bold',
     color: clicked ? 'black' : '#b2bec3',
 
     width: '200px',

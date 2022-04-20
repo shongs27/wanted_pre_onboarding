@@ -16,6 +16,7 @@ const Container = styled.div({
 
 const Button = styled.button(({ toggle }) => ({
   backgroundColor: toggle ? 'white' : 'inherit',
+
   padding: '1em',
   width: '150px',
   fontWeight: 'bold',
@@ -31,20 +32,17 @@ const Button = styled.button(({ toggle }) => ({
 export default function Toggle() {
   const [toggle, setToggle] = useState(true);
 
-  function handleBasic() {
-    setToggle(true);
-  }
-  function handleDetail() {
-    setToggle(false);
+  function handleToggle() {
+    setToggle((prev) => !prev);
   }
 
   return (
     <Container>
-      <Button toggle={toggle} onClick={handleBasic}>
+      <Button toggle={toggle} onClick={handleToggle}>
         기본
       </Button>
 
-      <Button toggle={!toggle} onClick={handleDetail}>
+      <Button toggle={!toggle} onClick={handleToggle}>
         상세
       </Button>
     </Container>

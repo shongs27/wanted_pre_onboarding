@@ -7,6 +7,24 @@ const Container = styled.div({
   margin: '1em 10em',
 });
 
+const ResultBox = styled.div({
+  boxSizing: 'border-box',
+  width: '400px',
+  textAlign: 'end',
+  border: '2px solid #efefef',
+  padding: '.4em',
+
+  '& span:first-child': {
+    fontWeight: 'bold',
+  },
+
+  '& span': {
+    display: 'inline-block',
+    marginLeft: '1em',
+    marginRight: '1em',
+  },
+});
+
 const InputSlider = styled.input(({ value }) => ({
   width: '400px',
   WebkitAppearance: 'none',
@@ -26,7 +44,6 @@ const InputSlider = styled.input(({ value }) => ({
     borderRadius: '50%',
     background: '#1abc9c',
     cursor: 'pointer',
-    // transition: 'background .15s ease-in-out',
     boxShadow: '0 0 0 3px white, 0 0 0 6px #1abc9c',
   },
 }));
@@ -42,7 +59,6 @@ const Datalist = styled.datalist({
   position: 'relative',
   bottom: '-22px',
   WebkitUserSelect: 'none',
-  //   WebkitUserSelect: 'none' /* Safari */,
   pointerEvents: 'none',
 
   '& option': {
@@ -93,26 +109,10 @@ export default function Slider() {
 
   return (
     <Container>
-      <div
-        style={{
-          boxSizing: 'border-box',
-          width: '400px',
-          textAlign: 'end',
-          border: '2px solid #efefef',
-          padding: '.4em',
-        }}
-      >
-        <span style={{ fontWeight: 'bold' }}>{value}</span>
-        <span
-          style={{
-            display: 'inline-block',
-            marginLeft: '1em',
-            marginRight: '1em',
-          }}
-        >
-          %
-        </span>
-      </div>
+      <ResultBox>
+        <span>{value}</span>
+        <span>%</span>
+      </ResultBox>
       <Datalist id="number">
         <option value="1"></option>
         <option value="25"></option>
@@ -120,7 +120,7 @@ export default function Slider() {
         <option value="75"></option>
         <option value="100"></option>
       </Datalist>
-      <div>
+      <div className="input-number">
         <InputSlider
           list="number"
           type="range"

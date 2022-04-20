@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
+import arrowImage from '../image/arrow.svg';
 import styled from '@emotion/styled';
-import image from '../image/arrow.svg';
 
 const SelectBox = styled.div({
   width: '300px',
@@ -24,7 +24,7 @@ const Selected = styled.div(({ toggle }) => ({
 
   '&::after': {
     content: "''",
-    background: `url(${image})`,
+    background: `url(${arrowImage})`,
     backgroundRepeat: 'no-repeat',
     width: '20px',
     height: '100%',
@@ -38,7 +38,7 @@ const Selected = styled.div(({ toggle }) => ({
   },
 }));
 
-const OptionsContainer = styled.div(({ toggle, show }) => ({
+const OptionsContainer = styled.div(({ toggle }) => ({
   backgroundColor: '#2f3640',
   borderRadius: '0 0 8px 8px',
   color: 'white',
@@ -89,7 +89,6 @@ const Filter = styled.div(({ toggle }) => ({
 
   border: '9px solid #2f3640',
   borderRadius: '8px 8px 0 0',
-  // outline: 'none',
 
   '& input': {
     width: '100%',
