@@ -63,8 +63,6 @@ const Datalist = styled.datalist({
   pointerEvents: 'none',
 
   '& option': {
-    WebkitAppearance: 'none',
-
     width: '20px',
     height: '20px',
     borderRadius: '50%',
@@ -100,7 +98,7 @@ const Item = styled.li({
 
 export default function Slider() {
   const [first, second, third, forth, fifth] = [1, 25, 50, 75, 100];
-  const [value, setValue] = useState('50');
+  const [value, setValue] = useState(third);
 
   function handleChange(e) {
     setValue(e.target.value);
@@ -117,28 +115,28 @@ export default function Slider() {
         <span>%</span>
       </ResultBox>
       <Datalist id="number">
-        <option value="1"></option>
-        <option value="25"></option>
-        <option value="50"></option>
-        <option value="75"></option>
-        <option value="100"></option>
+        <option value={first}></option>
+        <option value={second}></option>
+        <option value={third}></option>
+        <option value={forth}></option>
+        <option value={fifth}></option>
       </Datalist>
       <div className="input-number">
         <InputSlider
           list="number"
           type="range"
           id="slider"
-          min="1"
-          max="100"
+          min={first}
+          max={fifth}
           step="1"
           value={value}
           onChange={handleChange}
         />
         <List>
-          {[first, second, third, forth, fifth].map((step) => (
-            <Item key={step}>
-              <button type="button" onClick={() => handleClick(step)}>
-                {step}%
+          {[first, second, third, forth, fifth].map((stop) => (
+            <Item key={stop}>
+              <button type="button" onClick={() => handleClick(stop)}>
+                {stop}%
               </button>
             </Item>
           ))}
