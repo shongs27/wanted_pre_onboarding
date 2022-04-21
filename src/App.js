@@ -8,7 +8,7 @@ import Dropzone from './components/Dropzone';
 
 const Container = styled.div({
   width: '50%',
-  minHeight: '1200px',
+  minHeight: '1400px',
   margin: '5px auto',
   padding: '0 1.4em',
   border: '1px solid black',

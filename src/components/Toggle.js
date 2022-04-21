@@ -3,10 +3,9 @@ import { useState } from 'react';
 import styled from '@emotion/styled';
 
 const Container = styled.div({
+  display: 'flex',
   width: '300px',
   margin: '1em auto',
-
-  display: 'flex',
 
   backgroundColor: '#efefef',
 
@@ -16,10 +15,10 @@ const Container = styled.div({
 
 const Button = styled.button(({ toggle }) => ({
   backgroundColor: toggle ? 'white' : 'inherit',
-
-  padding: '1em',
-  width: '150px',
   fontWeight: 'bold',
+
+  width: '150px',
+  padding: '1em',
 
   border: '1px solid #eee',
   borderRadius: '30px',

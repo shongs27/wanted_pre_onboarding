@@ -9,19 +9,14 @@ const SelectBox = styled.div({
 });
 
 const Selected = styled.div(({ toggle }) => ({
+  marginBottom: '4px',
+  padding: '12px 24px',
+
   backgroundColor: '#2f3640',
   color: '#f5f6fa',
   borderRadius: '8px',
 
-  marginBottom: '4px',
-  padding: '12px 24px',
-
   position: 'relative',
-
-  '&:hover': {
-    cursor: 'pointer',
-  },
-
   '&::after': {
     content: "''",
     background: `url(${arrowImage})`,
@@ -35,6 +30,10 @@ const Selected = styled.div(({ toggle }) => ({
 
     transform: toggle && 'rotateX(180deg)',
     transition: 'all 0.4s',
+  },
+
+  '&:hover': {
+    cursor: 'pointer',
   },
 }));
 
@@ -91,10 +90,10 @@ const Filter = styled.div(({ toggle }) => ({
   borderRadius: '8px 8px 0 0',
 
   '& input': {
-    width: '100%',
     boxSizing: 'border-box',
-    fontSize: '.8em',
+    width: '100%',
     padding: '12px 16px',
+    fontSize: '.8em',
   },
 }));
 
@@ -141,6 +140,7 @@ export default function Dropzone() {
       }
     });
   }
+
   return (
     <SelectBox>
       <Selected toggle={toggle} onClick={handleToggle}>

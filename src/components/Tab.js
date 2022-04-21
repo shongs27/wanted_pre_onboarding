@@ -3,12 +3,12 @@ import { useState } from 'react';
 import styled from '@emotion/styled';
 
 const List = styled.ul(({ clicked }) => ({
+  display: 'flex',
   width: '600px',
+  padding: 0,
   margin: '1em auto',
 
-  display: 'flex',
   listStyle: 'none',
-  padding: 0,
 
   borderBottom: '2px solid #efefef',
 
@@ -31,13 +31,13 @@ const List = styled.ul(({ clicked }) => ({
 
 const Item = styled.li(({ clicked }) => ({
   '& button': {
-    backgroundColor: 'inherit',
+    width: '200px',
+    padding: '1em 4em',
 
     fontWeight: clicked ? '900' : 'bold',
     color: clicked ? 'black' : '#b2bec3',
+    backgroundColor: 'inherit',
 
-    width: '200px',
-    padding: '1em 4em',
     border: 'none',
 
     '&:hover': {

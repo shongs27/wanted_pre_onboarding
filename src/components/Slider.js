@@ -10,9 +10,9 @@ const Container = styled.div({
 const ResultBox = styled.div({
   boxSizing: 'border-box',
   width: '400px',
+  padding: '.4em',
   textAlign: 'end',
   border: '2px solid #efefef',
-  padding: '.4em',
 
   '& span:first-child': {
     fontWeight: 'bold',
@@ -41,23 +41,24 @@ const InputSlider = styled.input(({ value }) => ({
 
     width: '20px',
     height: '20px',
-    borderRadius: '50%',
     background: '#1abc9c',
+    borderRadius: '50%',
     cursor: 'pointer',
     boxShadow: '0 0 0 3px white, 0 0 0 6px #1abc9c',
   },
 }));
 
 const Datalist = styled.datalist({
-  width: '400px',
   display: 'flex',
   justifyContent: 'space-between',
 
+  width: '400px',
   margin: 0,
   padding: 0,
 
   position: 'relative',
   bottom: '-22px',
+
   WebkitUserSelect: 'none',
   pointerEvents: 'none',
 
@@ -72,21 +73,23 @@ const Datalist = styled.datalist({
 });
 
 const List = styled.ul({
-  width: '400px',
-
   display: 'flex',
   justifyContent: 'space-between',
-  listStyle: 'none',
+
+  width: '400px',
   padding: 0,
+
+  listStyle: 'none',
 });
 
 const Item = styled.li({
   '& button': {
+    padding: '.2em 1em',
+
     color: '#b2bec3',
     backgroundColor: '#efefef',
     border: '1px solid #efefef',
     borderRadius: '30px',
-    padding: '.2em 1em',
 
     '&:hover': {
       backgroundColor: '#1abc9c',
