@@ -1,0 +1,53 @@
+$length: var(--length);
+
+.list {
+  display: flex;
+  width: 600px;
+  padding: 0;
+  margin: 1em auto;
+
+  list-style: none;
+
+  border-bottom: 2px solid #efefef;
+
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: $length;
+    bottom: -2px;
+
+    display: block;
+    width: 200px;
+    height: 2px;
+    background-color: #00cec9;
+
+    transition: 0.5s;
+  }
+
+  .item {
+    width: 200px;
+    padding: 1em 4em;
+
+    // font-weight: bold;
+    // color: #b2bec3;
+    background-color: inherit;
+
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.selected {
+  font-weight: 900;
+  color: black;
+}
+
+.notSelected {
+  font-weight: bold;
+  color: #b2bec3;
+}

@@ -1,0 +1,42 @@
+.container {
+  padding: 1em 10em;
+}
+
+.label {
+  display: flex;
+  justify-content: space-around;
+
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 30px;
+  padding: 1em;
+  background-color: #efefef;
+
+  position: relative;
+  &::before {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+
+    border-radius: 30px;
+
+    content: "";
+    width: 150px;
+    height: 50px;
+    background-color: white;
+
+    transition: 0.4s ease-in-out;
+  }
+
+  span {
+    z-index: 9999;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.input:checked + .label::before {
+  left: 140px;
+}

@@ -1,60 +1,13 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import check from '../image/check.svg';
-import falseEye from '../image/falseEye.svg';
-import trueEye from '../image/trueEye.svg';
+import { Check, FalseEye, TrueEye } from "../image";
 
-import styled from '@emotion/styled';
-
-const Container = styled.div({
-  margin: '1em',
-});
-
-const EmailInput = styled.div(({ validity }) => ({
-  position: 'relative',
-  width: '300px',
-
-  '& input': {
-    width: '300px',
-    height: '30px',
-    padding: '2px 6px',
-    fontSize: '16px',
-  },
-
-  '& div': {
-    display: validity ? 'inline-block' : 'none',
-
-    position: 'absolute',
-    top: '7px',
-    right: '2px',
-  },
-}));
-
-const PasswordInput = styled.div({
-  position: 'relative',
-  width: '300px',
-
-  '& input': {
-    width: '300px',
-    height: '30px',
-    padding: '2px 6px',
-    fontSize: '16px',
-  },
-
-  '& button': {
-    position: 'absolute',
-    top: '7px',
-    right: '-5px',
-
-    backgroundColor: 'inherit',
-    border: 'none',
-  },
-});
+import styles from "./input.module.scss";
 
 export default function Input() {
   const [form, setForm] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
   const [touched, setTouched] = useState({
     email: true,
@@ -75,8 +28,11 @@ export default function Input() {
       [name]: value,
     });
 
-    if (name === 'email') {
-      const emailValidity = /^[\w]+@\w+\.[A-Za-z]{2,3}$/.test(value);
+    if (name === "email") {
+      const emailValidity =
+        /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+          value
+        );
       emailValidity
         ? setValidity({ ...validity, email: true })
         : setValidity({ ...validity, email: false });
@@ -96,10 +52,10 @@ export default function Input() {
   }
 
   return (
-    <Container>
-      <div className="email">
+    <div className={styles.container}>
+      <div className={styles.email}>
         <label htmlFor="input-email">E-mail</label>
-        <EmailInput validity={validity.email}>
+        <div className={styles.emailInput} validity={validity.email}>
           <input
             type="email"
             id="input-email"
@@ -108,35 +64,37 @@ export default function Input() {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          <div>
-            <img src={check} alt="체크 이미지" width="20px" height="20px" />
-          </div>
-        </EmailInput>
+
+          {validity.email && (
+            <div>
+              <Check width="20px" height="20px" fill="green" />
+            </div>
+          )}
+        </div>
         {!validity.email && !touched.email && (
           <div>이메일 잘못 입력하셨어요</div>
         )}
       </div>
-      <div className="password">
+      <div className={styles.password}>
         <label htmlFor="input-password">Password</label>
-        <PasswordInput clicked={clicked}>
+        <div className={styles.passwordInput} clicked={clicked}>
           <input
-            type={clicked ? 'password' : 'text'}
+            type={clicked ? "password" : "text"}
             id="input-password"
             name="password"
             value={form.password}
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          <button onClick={handleClick}>
-            <img
-              src={clicked ? trueEye : falseEye}
-              alt="비밀번호 "
-              width="20px"
-              height="20px"
-            />
+          <button type="button" onClick={handleClick}>
+            {clicked ? (
+              <TrueEye width="20px" height="20px" />
+            ) : (
+              <FalseEye width="20px" height="20px" />
+            )}
           </button>
-        </PasswordInput>
+        </div>
       </div>
-    </Container>
+    </div>
   );
 }

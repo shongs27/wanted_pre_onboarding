@@ -1,0 +1,25 @@
+$hi: black;
+
+@font-face {
+  font-family: "Godo";
+  font-style: normal;
+  font-weight: 400;
+  src: url("//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff2")
+      format("woff2"),
+    url("//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff")
+      format("woff");
+}
+
+.topContainer {
+  width: 50%;
+  min-height: 1400px;
+  margin: 5px auto;
+  padding: 0 1.4em;
+  border: 1px solid black;
+  font-size: 20px;
+  font-family: "Godo", sans-serif;
+
+  > div {
+    margin-bottom: 50px;
+  }
+}

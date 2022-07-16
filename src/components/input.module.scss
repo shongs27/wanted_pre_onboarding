@@ -1,0 +1,53 @@
+.container {
+  margin: 1em 4em;
+}
+
+.email {
+  margin-bottom: 20px;
+}
+
+.emailInput {
+  position: relative;
+  width: 300px;
+
+  margin-bottom: 10px;
+
+  & input {
+    width: 300px;
+    height: 30px;
+    padding: 2px 6px;
+    font-size: 16px;
+
+    border: 1px solid black;
+  }
+
+  & div {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+  }
+}
+
+.passwordInput {
+  position: relative;
+  width: 300px;
+
+  & input {
+    width: 300px;
+    height: 30px;
+    padding: 2px 6px;
+    font-size: 16px;
+
+    border: 1px solid black;
+  }
+
+  & button {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+
+    // button, input은 스타일 제거되어있음
+    // background-color: inherit;
+    // border: none;
+  }
+}
